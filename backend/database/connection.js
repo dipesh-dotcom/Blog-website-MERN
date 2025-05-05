@@ -15,6 +15,7 @@ sequelize
 const db = {};
 db.Sequelize = Sequelize;
 db.sequelize = sequelize;
+db.blogs = require("./models/blog.model")(sequelize, DataTypes);
 
 // logic to migrate model
 sequelize.sync({ alter: false }).then(() => {
